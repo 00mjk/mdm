@@ -134,7 +134,7 @@ fi
 
 if [ -f "$XRANDR_INFO_FILE" ]; then
     WIDTH_MULTIPLIER=`grep -A1 ":0.$((i-1))" $XRANDR_INFO_FILE	|
-                        tail -1 | cut -d'=' -f2`
+                        tail -n 1 | cut -d'=' -f2`
     # If $WIDTH_MULTIPLIER=0, set it as 1 (for configuring at least one screen)
     WIDTH_MULTIPLIER=${WIDTH_MULTIPLIER/0/1}
 fi

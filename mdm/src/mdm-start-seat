@@ -247,7 +247,7 @@ KEYBOARD=
 MOUSE=
 SEAT_WINDOW_ID=
 SCREEN_X_ORIGIN=($(grep -A4 $DISPLAY $XRANDR_INFO_FILE |
-					tail -1 | cut -d'=' -f2))
+					tail -n 1 | cut -d'=' -f2))
 
 # XXX: In case $SCREEN_X_ORIGIN has only one value, and SEAT_DISPLAY is odd,
 # the open_seat_parent_window given parameter would be empty
